@@ -6,6 +6,9 @@ import "./index.css";
 import App from "./App";
 import config from "./config";
 import * as serviceWorker from "./serviceWorker";
+import { initSentry } from "./libs/errorLib";
+
+initSentry();
 
 Amplify.configure({
   Auth: {
@@ -35,7 +38,7 @@ ReactDOM.render(
   <Router>
     <App />
   </Router>,
-  document.getElementById("root"),
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
